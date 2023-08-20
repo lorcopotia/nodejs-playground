@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const res = require('express/lib/response');
 const PORT = 8080;
+const url = require('url');
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/clientes.db', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
@@ -10,11 +11,12 @@ const db = new sqlite3.Database('./db/clientes.db', sqlite3.OPEN_READWRITE, (err
   }
 });
 
+// Setting variable for sql queries
 let sql;
-const url = require('url');
 
 app.use(bodyParser.json());
 
+// Starting server
 app.listen(
   PORT,
   () => console.log(`it's alive on http://localhost:${PORT}`)
@@ -55,6 +57,7 @@ app.get('/clients', (req, res) => {
   }
 });
 
+// POST request to add clients to de DDBB
 app.post('/clients', (req, res) => {
   try {
     const { nombre, apellido, edad, telefono, email, direccion, ciudad, estado, pais } = req.body;
