@@ -81,19 +81,3 @@ app.post('/clients', (req, res) => {
     });
   }
 });
-
-// app.post('/clients/:id', (req, res) => {
-//   const { id } = req.params;
-//   const { body } = req;
-
-//   if (!body) {
-//     return res.status(400).send({
-//       error: 'No se ha enviado ningun body'
-//     });
-//   }
-
-//   res.send({
-//     id,
-//     body
-//   });
-// });
