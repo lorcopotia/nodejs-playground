@@ -12,4 +12,6 @@ Este directorio contiene una API muy sencilla. Responde a dos llamadas, una GET 
 3. Ejecutar `npm install express` en la terminal
 4. Ejecutar `npm install body-parser sqlite3 nodemon` en instalar el modulo de parseo json y para la base de datos
 
-
+**Ejecucion**
+Ir hasta el directorio donde se encuentra la raiz del proyecto y ejecutar:
+`node .\index.js`
